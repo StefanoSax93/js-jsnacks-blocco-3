@@ -15,11 +15,32 @@ while(i<n) {
     array = [];
     //faccio in modo che ogni array sia formato da 10 numeri casuali da 0 a 100
     for(let x=0; x<10; x++) {
-        array[x]=Math.floor(Math.random() * 100)
+        array[x]=Math.floor(Math.random() * 100) + 1;
     }
-    listaArray[i]=array;
+    //aggiungo l'array generato alla lista degli array
+    listaArray.push(array);
     i++
     console.log(array);
 }
 console.log(listaArray);
 
+//METODO 2 (USANDO SOLO WHILE)
+//finché la lunghezza di array generati è minore del numero inserito
+//ripeto il ciclo
+
+/* while(listaArray.length<n) {
+    array = [];
+    //faccio in modo che ogni array sia formato da 10 numeri casuali da 0 a 100
+    while(array.length<10) {
+        //creo un numero casuale da 1 a 100
+        const numeroCasuale = Math.floor(Math.random() * 100) + 1;
+
+        //controllo che il numero non sia già presente nell'array
+        if (!array.includes(numeroCasuale)) {
+            //se il numero non è presente nell'array lo aggiungo
+            array.push(numeroCasuale)
+        }
+    }
+    listaArray.push(array);
+    console.log(array);
+}*/
